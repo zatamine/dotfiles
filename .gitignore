@@ -1,5 +1,6 @@
 #Fist, ignore everything
 *
-!.vim
+!.vim/*
 !.vimrc
 !.gitignore
+!README.md
