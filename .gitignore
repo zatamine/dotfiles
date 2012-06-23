@@ -1,0 +1,5 @@
+#Fist, ignore everything
+*
+!.vim
+!.vimrc
+!.gitignore
