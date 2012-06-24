@@ -3,4 +3,6 @@
 !.vim/*
 !.vimrc
 !.gitignore
+!.gitconfig
 !README.md
+!.xmonad/xmonad.hs
