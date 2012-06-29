@@ -1,4 +1,6 @@
-# conky config by Amine Haddad (zatamine@gmail.com)
+# Conky config by Amine Haddad (zatamine@gmail.com)
+# Based on this tutorial http://goo.gl/hYQKi
+# 29 june 2012
 
 background yes
 own_window yes
@@ -8,7 +10,7 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 use_xft yes
 xftfont 123:size=8
 xftalpha 0.1
-update_interval 1.0
+update_interval 3.0
 total_run_times 0
 alignment top_right
 maximum_width 400
@@ -32,15 +34,11 @@ cpu_avg_samples 4
 net_avg_samples 4
 override_utf8_locale yes
 use_spacer yes
-#font arial
 text_buffer_size 256
 
 TEXT
 
 ${font openlogos:size=20}U${font Arial:size=20}${color Tan1}GNU${color Ivory}LINUX${font openlogos:size=20}t
-#${font arial:bold:size=13}${time %A %d %B} ${alignr}${time %H:%M}
-#${font arial:size=12}
-#$nodename
 
 ${voffset -90}
 ${color DimGray}
@@ -97,28 +95,4 @@ ${downspeedgraph ra0}
 ${color DarkSlateGray}$nodename ${hr 2}$color
 
 ${font arial:bold:size=12}${time %A %d %B %Y} ${alignr}${time %H:%M}
-#${font Arial:bold:size=10}${color Tan2}WEATHER ${color DarkSlateGray}${hr 2}
-#${font}${color DimGray}
 
-#${voffset -25}${font Weather:size=45}${execi 1800 conkyForecast –location=BEXX0008 –datatype=WF}
-#${alignc 22}${voffset -60}${font Arial:bold:size=10}${color DimGray}${execi 1800 conkyForecast –location=BEXX0008 –datatype=HT}
-#$font${voffset -55}${alignr}${color DimGray}Wind: ${execi 1800 conkyForecast –location=BEXX0008 –datatype=WS}
-#${alignr}${color DimGray}Humidity: ${execi 1800 conkyForecast –location=BEXX0008 –datatype=HM}
-#${alignr}${color DimGray}Precipitation: ${execi 1800 conkyForecast –location=BEXX0008 –datatype=PC}
-
-#${color DimGray}Sunrise: $alignr${execi 1800 conkyForecast –location=BEXX0008 –datatype=SR}${alignr}
-#Sunset: $alignr${execi 1800 conkyForecast –location=BEXX0008 –datatype=SS}$color
-
-#${font Arial:bold:size=10}${color Tan2}MUSIC ${color DarkSlateGray}${hr 2}
-#${color DimGray}$font${if_running mpd}
-#$mpd_smart
-#$mpd_album
-#Bitrate $mpd_bitrate kbits/s
-#$mpd_status $mpd_elapsed/$mpd_length
-
-#${font Arial:bold:size=10}${color Tan2}TIME ${color DarkSlateGray}${hr 2}
-
-#${color DarkSlateGray} ${font :size=30}$alignc${time %H:%Mh}
-#${voffset -30}${font :bold:size=10}$alignc${time %d %b. %Y}
-#${font :bold:size=8}$alignc${time %A}
-#$endif
