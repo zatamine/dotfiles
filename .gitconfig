@@ -1,6 +1,3 @@
 [user]
 	name = Amine HADDAD
 	email = zatamine@gmail.com
-
-[include]
-	path = .xmonad/*
