@@ -9,6 +9,8 @@ set nu			" Affiche les numéros de lignes
 
 syntax on 		" Active la coloration syntaxique
 
+filetype indent plugin on
+
 set cursorline 		"mettre en évidence la ligne sur laquelle se trouve mon curseur
 highlight CursorLine guibg=#001000
 
@@ -22,6 +24,11 @@ set hls
 
 set t_Co=256
 
-let g:zenburn_high_Contrast = 1
+let g:zenburn_high_Contrast=1
 
-colorscheme zenburn 
+colorscheme zenburn
+
+let mapleader = ","
+
+"hi Normal ctermfg=252 ctermbg=none " Transparency
+let g:EasyMotion_leader_key = '<Leader>'
