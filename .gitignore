@@ -4,4 +4,8 @@
 !.gitignore
 !.gitconfig
 !README.md
+!.zshrc
+!install.sh
+!conky.sh
+!.conkyrc
 .vim/.netrwhist
