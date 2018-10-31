@@ -3,6 +3,7 @@
 [user]
 	email = zatamine@gmail.com
 	name = Amine HADDAD
+	signingkey = 0A29C06AF2A706C1
 [alias]
 	co = checkout
 	br = branch
@@ -11,3 +12,7 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	visual = !gitk
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
