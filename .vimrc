@@ -35,6 +35,7 @@ set incsearch		" Incremental search
 set number		" Show each line with its line number.
 "set ruler		" Show the line and column number of the cursor position
 set colorcolumn=81	" Highlight column after textwidth
+set pastetoggle=<F2>
 
 " set 'desert' colorscheme by default if 'solarized' are not installed
 if filereadable(expand("~/.vim/colors/solarized.vim"))
