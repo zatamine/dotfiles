@@ -89,7 +89,8 @@ set smartcase
 set nohlsearch
 
 " Spelling check
-set spell spelllang=en_us
+setlocal spell spelllang=en_us
+"set complete+=kspell
 
 " Undo file
 set undofile
@@ -102,7 +103,7 @@ endif
 set background=dark
 
 " set 'desert' colorscheme by default if 'solarized' are not installed
-if filereadable(expand("~/dotfiles/.vim/colors/solarized.vim"))
+if filereadable(expand("~/.vim/colors/solarized.vim"))
   colorscheme solarized
   set t_Co=256
 else
