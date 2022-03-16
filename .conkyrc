@@ -1,0 +1,98 @@
+# Conky config by Amine Haddad (zatamine@gmail.com)
+# Based on this tutorial http://goo.gl/hYQKi
+# 29 june 2012
+
+background yes
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+use_xft yes
+xftfont 123:size=8
+xftalpha 0.1
+update_interval 3.0
+total_run_times 0
+alignment top_right
+maximum_width 400
+minimum_size 250 5
+gap_x 10
+gap_y 10
+draw_shades no
+draw_outline no
+draw_borders no
+stippled_borders 3
+border_margin 5
+border_width 6
+default_color gray
+default_shade_color red
+default_outline_color green
+draw_graph_borders yes
+double_buffer yes
+no_buffers yes
+uppercase no
+cpu_avg_samples 4
+net_avg_samples 4
+override_utf8_locale yes
+use_spacer yes
+text_buffer_size 256
+
+TEXT
+
+${font openlogos:size=20}U${font Arial:size=20}${color Tan1}GNU${color Ivory}LINUX${font openlogos:size=20}t
+
+${voffset -90}
+${color DimGray}
+${font}
+${font Arial:bold:size=10}${color Tan1}SYSTEM ${color DarkSlateGray} ${hr 2}
+$font${color DimGray}$sysname $kernel $alignr $machine
+Intel Pentium D $alignr${freq_g cpu0}Ghz
+Uptime $alignr${uptime}
+File System $alignr${fs_type}
+
+${font Arial:bold:size=10}${color Tan1}PROCESSORS ${color DarkSlateGray}${hr 2}
+$font${color DimGray}
+CPU1  ${cpu cpu0}% ${cpubar cpu0}
+CPU2  ${cpu cpu2}% ${cpubar cpu2}
+CPU3  ${cpu cpu3}% ${cpubar cpu3}
+CPU4  ${cpu cpu4}% ${cpubar cpu4}
+Total CPU : ${cpu cpu0}% - ${freq 1} MHz - ${exec sensors | grep "Core 0" | awk     '{print $3}'}
+${color Tan1}${cpubar}$color
+#${cpugraph 000000 FF6600}
+
+${font Arial:bold:size=10}${color Tan1}TOP PROCESSES ${color DarkSlateGray}${hr 2}
+${color DimGray}$font${top name 1}${alignr}${top cpu 1} %
+$font${top name 2}${alignr}${top cpu 2} %
+$font${top name 3}${alignr}${top cpu 3} %
+
+${font Arial:bold:size=10}${color Tan1}MEMORY ${color DarkSlateGray}${hr 2}
+$font${color DimGray}MEM $alignc $mem / $memmax $alignr $memperc%
+${color Tan1}$membar
+$font${color DimGray}SWAP $alignc $swap / $swapmax $alignr $swapperc%
+$swapbar
+$memgraph
+#Processus : $processes En cours : $running_processes
+
+${font Arial:bold:size=10}${color Tan1}TOP MEMORY ${color DarkSlateGray}${hr 2}
+${color DimGray}$font${top_mem name 1}${alignr}${top mem 1} %
+$font${top_mem name 2}${alignr}${top mem 2} %
+$font${top_mem name 3}${alignr}${top mem 3} %
+
+${font Arial:bold:size=10}${color Tan1}HDD ${color DarkSlateGray}${hr 2}
+$font${color DimGray}/home $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_free_perc /home}%
+${fs_bar /home}
+
+${font Arial:bold:size=10}${color Tan2}NETWORK ${color DarkSlateGray}${hr 2}
+#$font${color DimGray}IP on eth0 $alignr ${addr eth0}
+$font${color DimGray}IP on Wifi $alignr ${addr ra0}
+
+Down $alignr ${downspeed ra0} kb/s
+Up $alignr ${upspeed ra0} kb/s
+
+Downloaded: $alignr  ${totaldown ra0}
+Uploaded: $alignr  ${totalup ra0}
+${downspeedgraph ra0}
+
+${color DarkSlateGray}$nodename ${hr 2}$color
+
+${font arial:bold:size=12}${time %A %d %B %Y} ${alignr}${time %H:%M}
+

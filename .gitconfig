@@ -1,0 +1,18 @@
+[push]
+	default = simple
+[user]
+	email = 264999+zatamine@users.noreply.github.com
+	name = Amine HADDAD
+	signingkey = 0A29C06AF2A706C1
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	visual = !gitk
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
