@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+if [ ! -h "$HOME/.vim" ]; then
+	ln -s "$HOME/dotfiles/.vim" "$HOME/.vim"
+fi
+
+if [ ! -h "$HOME/.vimrc" ]; then
+	ln -s "$HOME/dotfiles/.vimrc" "$HOME/.vimrc"
+fi
+
+if [ ! -h "$HOME/.gitconfig" ]; then
+	ln -s "$HOME/dotfiles/.gitconfig" "$HOME/.gitconfig"
+fi
+
+if [ ! -h "$HOME/.gitignore" ]; then
+	ln -s "$HOME/dotfiles/.gitignore" "$HOME/.gitignore"
+fi
+
+echo "Installation done."
