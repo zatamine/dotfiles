@@ -4,5 +4,14 @@ My personal dotfiles for Vim and other tools.
 
 ## Install
 
-`ln -s ~/dotfiles/.vim ~/.vim`
-`ln -s ~/dotfiles/.vimrc ~/.vimrc`
+```shell
+
+cd $HOME
+
+git clone git@github.com:zatamine/dotfiles.git
+
+./dotfiles/install
+
+```
+
+
