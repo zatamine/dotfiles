@@ -6,3 +6,4 @@ My personal dotfiles for Vim and other tools.
 
 `ln -s ~/dotfiles/.vim ~/.vim`
 `ln -s ~/dotfiles/.vimrc ~/.vimrc`
+# go-training

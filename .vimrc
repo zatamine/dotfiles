@@ -28,7 +28,7 @@ imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
 
 " Value corresponding to the width of your screen.
-set textwidth=79
+"set textwidth=79
 set colorcolumn=80
 set formatoptions=tcqrn1
 set tabstop=2
@@ -45,7 +45,7 @@ set noshiftround
 set cursorline
 
 " Fixes common backspace problems
-set backspace=indent,eol,start
+"set backspace=indent,eol,start
 
 " Speed up scrolling in Vim
 set ttyfast
@@ -69,7 +69,7 @@ set showmatch
 
 " Show line numbers
 set number
-set relativenumber
+"set relativenumber
 
 " Set status line display
 " set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
