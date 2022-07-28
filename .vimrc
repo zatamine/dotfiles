@@ -6,15 +6,26 @@
 
 " Set compatibility to Vim only.
 set nocompatible
+set mouse=a
 
 " Helps force plug-ins to load correctly when it is turned back on below.
-filetype off
+filetype on
 
-" Turn on syntax highlighting.
-syntax enable
+" Enable plugins and load plugin for the detected file type.
+filetype plugin on
+
+" Load an indent file for the detected file type.
+filetype indent on
 
 " For plug-ins to load correctly.
-filetype indent on
+"filetype plugin indent on
+
+" Turn on syntax highlighting.
+syntax on
+
+" Treat all numerals as decimal
+set nrformats=
+
 
 " Turn off modelines
 set modelines=0
@@ -23,38 +34,55 @@ set modelines=0
 set nowrap
 
 " Vim's auto indentation feature does not work properly with text copied from outside of Vim. Press the <F2> key to toggle paste mode on/off.
-nnoremap <F2> :set invpaste paste?<CR>
-imap <F2> <C-O>:set invpaste paste?<CR>
-set pastetoggle=<F2>
+"nnoremap <F2> :set invpaste paste?<CR>
+"imap <F2> <C-O>:set invpaste paste?<CR>
+"set pastetoggle=<F2>
+
+" Highlight cursor line underneath the cursor vertically.
+set cursorcolumn
 
 " Value corresponding to the width of your screen.
-"set textwidth=79
-set colorcolumn=80
-set formatoptions=tcqrn1
+"set textwidth=119
+set colorcolumn=119
+""set formatoptions=tcqrn1j
+set formatoptions=tcqj
 set tabstop=2
 set shiftwidth=2
-set softtabstop=2
-set noshiftround
+"set softtabstop=2
+"set noshiftround
 
 " use spaces instead of tabs
-"set expandtab
-"set smarttab
+set expandtab
+set smarttab
+"set autoindent
 
+"Avoid wrapping a line in the middle of a word.
+set linebreak
+
+" Display command line’s tab complete options as a menu.
+set wildmenu
+
+set title
 
 " Show a visual lien under the cursor's current line
 set cursorline
 
 " Fixes common backspace problems
-"set backspace=indent,eol,start
+set backspace=indent,eol,start
 
 " Speed up scrolling in Vim
 set ttyfast
 
+" Do not let cursor scroll below or above N number of lines when scrolling.
+set scrolloff=10
+
 " Status bar
 set laststatus=2
 
-" Display options
+" Show the mode you are on the last line.
 set showmode
+
+" Show partial command you type in the last line of the screen.
 set showcmd
 
 " Highlight matching pairs of brackets. Use the '%' character to jump between them.
@@ -65,7 +93,7 @@ set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 " Show matching brackets
-set showmatch
+"set showmatch
 
 " Show line numbers
 set number
@@ -78,16 +106,19 @@ set number
 set encoding=utf-8
 
 " Highlight matching search patterns
-" set hlsearch
+set hlsearch
+
 " Enable incremental search
 set incsearch
+
 " Include matching uppercase words with lowercase search term
 set ignorecase
+
 " Include only uppercase words with uppercase search term
 set smartcase
 
 " Don't continue to highlight searched phrases.
-set nohlsearch
+"set nohlsearch
 
 " Spelling check
 setlocal spell spelllang=en_us
@@ -103,10 +134,15 @@ endif
 " Using a dark background within the editing area and syntax highlighting
 set background=dark
 
+" Enable 256 colors palette in Gnome Terminal
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
 " set 'desert' colorscheme by default if 'solarized' are not installed
 if filereadable(expand("~/.vim/colors/solarized.vim"))
   colorscheme solarized
-  set t_Co=256
+"  set t_Co=256
 else
   colorscheme desert
 endif
@@ -120,3 +156,25 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Map the <Space> key to toggle a selected fold opened/closed.
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
+
+" Mute search hightlighting
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+
+" Configure paired characters
+"inoremap '' ''<ESC>ha
+"inoremap " ""<ESC>ha
+"inoremap ` ``<ESC>ha
+"inoremap ( ()<ESC>ha
+"inoremap [ []<ESC>ha
+"inoremap { {}<ESC>ha
+"inoremap /* /** */<ESC>2ha
+
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+" Temporary disable arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
