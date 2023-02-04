@@ -19,3 +19,5 @@
 	excludesFile = ~/.gitignore
 [merge]
 	tool = vimdiff
+[init]
+	defaultBranch = master
