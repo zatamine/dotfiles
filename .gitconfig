@@ -21,3 +21,6 @@
 	tool = vimdiff
 [init]
 	defaultBranch = master
+[pull]
+	rebase = true
+	ff = only
