@@ -7,6 +7,9 @@
 " Set compatibility to Vim only.
 set nocompatible
 
+" Enable the mouse
+set mouse=a
+
 " Helps force plug-ins to load correctly when it is turned back on below.
 filetype off
 
