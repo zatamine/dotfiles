@@ -20,6 +20,9 @@ syntax enable
 filetype indent on
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
+" Automatic syntax highlighting for files
+au BufRead,BufNewFile *.sbt           set filetype=scala
+au BufRead,BufNewFile *.sc            set filetype=scala
 
 " add yaml settings
 autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:>
