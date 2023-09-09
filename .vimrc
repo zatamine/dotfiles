@@ -31,7 +31,7 @@ imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
 
 " Value corresponding to the width of your screen.
-set textwidth=79
+"set textwidth=79
 set colorcolumn=80
 set formatoptions=tcqrn1
 set tabstop=2
