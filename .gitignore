@@ -8,5 +8,9 @@
 #!install.sh
 #!conky.sh
 #!.conkyrc
+*.swp
 .vim/.netrwhist
 .vscode/
+*.patch
+.idea/
+.bsp/
