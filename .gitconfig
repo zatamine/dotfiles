@@ -1,26 +1,36 @@
-[push]
-	default = simple
-[user]
-	email = 264999+zatamine@users.noreply.github.com
-	name = Amine HADDAD
-	signingkey = 0A29C06AF2A706C1
+[includeIf "gitdir:~/zatamine"]
+	path = ~/me.gitconfig
+[includeIf "gitdir:~/Works"]
+	path = ~/work.gitconfig
 [alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
-	unstage = reset HEAD --
-	last = log -1 HEAD
-	visual = !gitk
-	l = log --oneline --graph --decorate
-	la = log --oneline --graph --all --decorate
-[core]
-	editor = vim
-	excludesFile = ~/.gitignore
-[merge]
-	tool = vimdiff
-[init]
-	defaultBranch = master
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    visual = !gitk
+    l = log --oneline --graph --decorate
+    la = log --oneline --graph --all --decorate
+    ds = diff --staged
 [pull]
 	rebase = true
 	ff = only
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	editor = vim
+	excludesFile = ~/.gitignore
+[init]
+	defaultBranch = master
+[rerere]
+	enabled = true
+[fetch]
+	prune = true
+[diff]
+	colormoved = zebra
+[merge]
+	tool = vimdiff
