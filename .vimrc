@@ -37,7 +37,8 @@ set spellsuggest=10
 "set shiftround
 set nojoinspaces              " Use one space, not two, after punctuation
 set scrolloff=10              " Show a few lines of context around the cursor
-set mouse=""                  " Mouse disabled, set 'a' to enable in all modes
+set mouse=                  " Mouse disabled, set 'a' to enable in all modes
+set ttymouse=                  " Mouse disabled, set 'a' to enable in all modes
 set matchpairs+=<:>           " Highlight matching pairs of brackets using '%'
 " Store info from no more than 50 files at a time, 9999 lines of text,
 " 100kb of data. Useful for copying large amounts of data between files.
@@ -100,6 +101,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+:nmap <Up> <Nop>
+:nmap <Down> <Nop>
 " Map the <Space> key to toggle a selected fold opened/closed.
 "nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 "vnoremap <Space> zf
