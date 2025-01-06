@@ -9,4 +9,6 @@
 #!conky.sh
 #!.conkyrc
 .vim/.netrwhist
+.vim/spell/
+!.vim/spell/*.add
 .vscode/
