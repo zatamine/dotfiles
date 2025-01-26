@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/amine/personal/code/exercism/go'
+let g:netrw_dirhist_7='/home/amine/personal/code/zatamine/zhttp'
+let g:netrw_dirhist_6='/home/amine/personal/code/zatamine/goglish'
+let g:netrw_dirhist_5='/home/amine/personal/code/zatamine/zhttp'
+let g:netrw_dirhist_4='/home/amine/personal/code/zatamine/notes'
+let g:netrw_dirhist_3='/home/amine/personal/code/zatamine/zhttp'
+let g:netrw_dirhist_2='/home/amine/personal/code/zatamine'
+let g:netrw_dirhist_1='/home/amine/personal/code'
+let g:netrw_dirhist_0='/home/amine/personal'
+let g:netrw_dirhist_9='/home/amine'
