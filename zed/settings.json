@@ -1,0 +1,28 @@
+{
+  "theme": "One Dark",
+  "vim_mode": true,
+  "base_keymap": "JetBrains",
+  "relative_line_numbers": true,
+  "cursor_blink": false,
+  "scrollbar": {
+    "show": "never"
+  },
+  "auto_install_extensions": {
+    "html": false
+  },
+  "vertical_scroll_margin": 0,
+  "tab_bar": {
+    "show": true
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false
+  },
+  // Control what info is collected by Zed.
+  "telemetry": {
+    // Send debug info like crash reports.
+    "diagnostics": false,
+    // Send anonymized usage data like what languages you're using Zed with.
+    "metrics": false
+  }
+}

@@ -8,10 +8,13 @@ filetype plugin indent on       " Enabling filetype support indenting
 syntax enable                   " Turn on syntax highlighting
 set nostartofline               " keep cursor in the same column when moving
 set backspace=indent,eol,start  " Backspacing over everything in insert mode
-set nomodeline                  " As a security precaution
+"set nomodeline                  " As a security precaution
 set autowrite                   " Automatically :write before running commands
+set noswapfile
+set nobackup
 set smartindent
 set autoindent
+set ignorecase
 set smartcase                   " Only uppercase words with uppercase search term
 set incsearch                   " Do incremental searching
 set hlsearch                    " Continue to highlight searched phrases
@@ -47,7 +50,7 @@ set viminfo='50,<9999,s100
 "" Display options
 colorscheme habamax
 if filereadable(expand("~/.vim/colors/solarized.vim"))
-  set background=light
+  set background=dark
   colorscheme solarized
 endif
 set laststatus=2    " Always display the status line
@@ -59,6 +62,7 @@ set numberwidth=5
 set textwidth=80    " Make it obvious where 80 characters is
 set colorcolumn=+1
 set list listchars=tab:»·,trail:·,nbsp:· " Display extra white space
+set invlist
 "set termguicolors
 " Open new split panes to right and bottom
 set splitbelow
@@ -74,13 +78,46 @@ set splitright
 "let g:is_posix = 1
 
 ""  Keybinding
-nnoremap <leader>r :source ~/.vimrc<CR>
+nnoremap <leader>r :source ~/.vim/vimrc<CR>
 " Open explorer
 nnoremap <leader>f :Lex<CR>
 nnoremap <leader>s :find
 nnoremap <leader>w :w<CR>
+nnoremap <silent> <leader>q :q!<CR>
+nnoremap <leader>b :bn<CR>
+" Close all but the current one
+nnoremap <leader>o :only<CR>
 nnoremap <leader>n :call SwitchBg()<CR>
 nnoremap <leader>l :call CycleLineNumbers()<CR>
+
+" create a go doc comment based on the word under the cursor
+function! s:create_go_doc_comment()
+  norm "zyiw
+  execute ":put! z"
+  execute ":norm I// \<Esc>$"
+endfunction
+
+augroup go
+  autocmd!
+
+  autocmd FileType go nnoremap <leader>ui :<c-u>call <sid>create_go_doc_comment()<cr>
+  autocmd FileType go nmap <C-g> :GoDecls<cr>
+  autocmd FileType go nmap <silent> <Leader>v <Plug>(go-def-vertical)
+  autocmd FileType go nmap <silent> <Leader>s <Plug>(go-def-split)
+  autocmd FileType go nmap <silent> <Leader>d <Plug>(go-def-tab)
+
+  autocmd FileType go nmap <silent> <Leader>i <Plug>(go-doc)
+
+  autocmd FileType go nmap <silent> <leader>t  <Plug>(go-test)
+  autocmd FileType go nmap <silent> <Leader>c <Plug>(go-coverage-toggle)
+
+  " I like these more!
+  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+augroup END
+
 " Display/hide different types of white spaces
 noremap <Leader><Tab><Tab> :set invlist<CR>
 " Switch between the last two files
@@ -122,6 +159,11 @@ let g:netrw_winsize=20
 
 " add yaml settings
 autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:>
+
+augroup filetypedetect
+  autocmd BufNewFile,BufRead *.md setlocal noet ts=4 sw=4
+  autocmd FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
+augroup END
 
 "" Set status line display
 "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
@@ -184,4 +226,4 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
   \ | wincmd p | diffthis
 endif
-
+" vim: sw=2 sw=2 et

@@ -1,0 +1,125 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Dock",
+    "bindings": {
+      // "space e": "workspace::ToggleLeftDock",
+      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "shift-k": "editor::Hover"
+      // "space /": "workspace::NewSearch",
+      // "space c f": "editor::Format",
+      // "space c s": "outline::Toggle",
+      // "space e": "workspace::ToggleLeftDock",
+      // "space f f": "file_finder::Toggle",
+      // "space g": "editor::ToggleGitBlame",
+      // "space n": "editor::ToggleRelativeLineNumbers",
+      // "space b": "tab_switcher::Toggle",
+      // "space b p": "pane::ActivatePrevItem",
+      // "space b n": "pane::ActivateNextItem",
+      // "space q": "pane::CloseActiveItem",
+      // "space r": "editor::Rename",
+      // "space s": "pane::DeploySearch",
+      // "space t": "workspace::NewCenterTerminal",
+      // "space v": "editor::GoToDefinitionSplit",
+      // "space w": "workspace::Save"
+      // "space d": "diagnostics::Deploy",
+      // Put key bindings here if you want them to work in normal & visual mode.
+    }
+  },
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      // "shift-y": ["workspace::SendKeystrokes", "y $"] // Use neovim's yank behavior: yank to end of line.
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "j j": "vim::NormalBefore",
+      "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "vim_mode == visual && !menu",
+    "bindings": {
+      "shift-k": "editor::MoveLineUp",
+      "shift-j": "editor::MoveLineDown"
+    }
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      // "space q": "pane::CloseActiveItem",
+      // Put key bindings here (in addition to the context above) if you want them to
+      // work when no editor exists.
+      // "space f f": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "cmd-1": ["pane::ActivateItem", 0],
+      "cmd-2": ["pane::ActivateItem", 1],
+      "cmd-3": ["pane::ActivateItem", 2],
+      "cmd-4": ["pane::ActivateItem", 3],
+      "cmd-5": ["pane::ActivateItem", 4],
+      "cmd-6": ["pane::ActivateItem", 5],
+      "cmd-7": ["pane::ActivateItem", 6],
+      "cmd-8": ["pane::ActivateItem", 7],
+      "cmd-9": ["pane::ActivateItem", 8]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k": [
+        "projects::OpenRecent",
+        {
+          "create_new_window": false
+        }
+      ],
+      "ctrl-x": "tab_switcher::CloseSelectedItem"
+    }
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "ctrl-k": "menu::SelectPrev",
+      "ctrl-j": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "FileFinder",
+    "bindings": {
+      "ctrl-k": "menu::SelectPrev",
+      "ctrl-j": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "CommandPalette",
+    "bindings": {
+      "ctrl-k": "menu::SelectPrev",
+      "ctrl-j": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-t": "workspace::NewTerminal"
+    }
+  }
+]
