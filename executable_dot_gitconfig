@@ -1,0 +1,44 @@
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    visual = !gitk
+    l = log --oneline --graph --decorate
+    la = log --oneline --graph --all --decorate
+[user]
+	name = Amine HADDAD
+	useconfigonly = true
+[core]
+    editor = vim
+	excludesFile = ~/.gitignore
+[merge]
+    tool = vimdiff
+[init]
+    defaultBranch = master
+[pull]
+    rebase = true
+    ff = only
+
+[includeIf "gitdir:~/code/perso/"]
+    path = ~/.gitconfig-perso
+
+[includeIf "gitdir:~/code/pro/"]
+    path = ~/.dotfiles/git/.gitconfig-pro
+[includeIf "gitdir:~/"]
+    path = ~/.gitconfig-perso
+
+# Local machine-specific overrides (Not tracked in Git)
+[include]
+    path = ~/.gitconfig.local
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+

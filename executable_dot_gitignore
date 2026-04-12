@@ -1,0 +1,11 @@
+# Private folders
+.private/
+private/
+
+# IA folders
+.agent/
+.cursor/
+
+# Ephemeral folders 
+tmp/
+logs/
