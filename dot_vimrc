@@ -1,0 +1,5 @@
+set number
+set spell
+set spelllang=en_us,fr
+set spellsuggest=5
+
