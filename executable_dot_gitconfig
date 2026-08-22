@@ -22,13 +22,14 @@
     rebase = true
     ff = only
 
+[includeIf "gitdir:~/"]
+    path = ~/.gitconfig-perso
+
 [includeIf "gitdir:~/code/perso/"]
     path = ~/.gitconfig-perso
 
 [includeIf "gitdir:~/code/pro/"]
-    path = ~/.dotfiles/git/.gitconfig-pro
-[includeIf "gitdir:~/"]
-    path = ~/.gitconfig-perso
+    path = ~/.gitconfig-pro
 
 # Local machine-specific overrides (Not tracked in Git)
 [include]
